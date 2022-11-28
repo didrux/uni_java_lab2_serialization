@@ -4,11 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.Objects;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
-
-import java.util.Calendar;
-import java.util.Objects;
 
 @JsonDeserialize(builder = Employee.EmployeeBuilder.class)
 public class Employee {

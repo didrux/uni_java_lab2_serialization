@@ -21,18 +21,9 @@ public class Main {
         Product productSecond = new Product.ProductBuilder().setId(901).setName("Table").setPrice(1500).setCategory("Kitchen")
                 .build();
 
-        Product productThird = new Product.ProductBuilder().setId(902).setName("Sofa").setPrice(4000).setCategory("Living room")
-                .build();
-
-
-
-//
         List<Product> kitchenProducts = new ArrayList<>();
         kitchenProducts.add(productFirst);
         kitchenProducts.add(productSecond);
-
-
-
 
         Producer producerFirst = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts)
                 .build();

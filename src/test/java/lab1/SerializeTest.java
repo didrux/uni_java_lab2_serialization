@@ -10,17 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
 
 public class SerializeTest {
 
     Employee employeeFirst = new Employee.EmployeeBuilder().setName("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
-            .build();
-
-    Employee employeeSecond = new Employee.EmployeeBuilder().setName("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
-            .build();
-
-    Employee employeeThird = new Employee.EmployeeBuilder().setName("Ivan").setPosition("Seller").setSalary(15000).setPhoneNumber("0504340602").setMedicalExamination(true).setAddress("Poshtova, 2")
             .build();
 
     Product productFirst = new Product.ProductBuilder().setId(901).setName("Table").setPrice(1500).setCategory("Kitchen")
@@ -29,18 +22,10 @@ public class SerializeTest {
     Product productSecond = new Product.ProductBuilder().setId(901).setName("Table").setPrice(1500).setCategory("Kitchen")
             .build();
 
-    Product productThird = new Product.ProductBuilder().setId(902).setName("Sofa").setPrice(4000).setCategory("Living room")
-            .build();
-
     List<Product> kitchenProducts = Arrays.asList(productFirst, productSecond);
-
 
     Producer producerFirst = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2")
             .build();
-
-    Producer producerSecond = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2")
-            .build();
-
 
     @Test
     public void testJsonSerialization() {

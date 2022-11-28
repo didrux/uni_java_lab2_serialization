@@ -21,9 +21,9 @@ public class Producer {
     }
 
     /**
-     * Set hospital address
+     * Set producer address
      *
-     * @param address hospital address
+     * @param address producer address
      */
     public void setAddress(String address) {
         this.address = address;
@@ -40,7 +40,7 @@ public class Producer {
     }
 
     /**
-     * @return hospital address
+     * @return producer address
      */
     public String getAddress() {
         return address;
@@ -50,26 +50,16 @@ public class Producer {
         return name;
     }
 
-    /**
-     * Add doctor to hospital's doctor list
-     *
-     * @param doctor doctor whom need to add
-     */
-    public void addProduct(Product doctor) {
-        products.add(doctor);
+    public void addProduct(Product product) {
+        products.add(product);
     }
 
-    /**
-     * Add products to hospital's doctor list
-     *
-     * @param products products whoms need to add
-     */
     public void addProducts(List<Product> products) {
         this.products.addAll(products);
     }
 
     /**
-     * Get all products from hospital's doctor list
+     * Get all products from producer's product list
      *
      * @return list of products
      */
@@ -84,9 +74,9 @@ public class Producer {
         private final List<Product> products = new ArrayList<>();
 
         /**
-         * Set name of hospital
+         * Set name of producer
          *
-         * @param name hospital name
+         * @param name producer name
          * @return ProducerBuilder instance
          */
         public ProducerBuilder setName(String name) {
@@ -95,9 +85,9 @@ public class Producer {
         }
 
         /**
-         * Set address of hospital
+         * Set address of producer
          *
-         * @param address hospital address
+         * @param address producer address
          * @return ProducerBuilder instance
          */
         public ProducerBuilder setAddress(String address) {
@@ -106,7 +96,7 @@ public class Producer {
         }
 
         /**
-         * Set list of hospital products
+         * Set list of producer products
          *
          * @param products list of products
          * @return ProducerBuilder instance
@@ -147,7 +137,7 @@ public class Producer {
     }
 
     /**
-     * Compare hospitals objects
+     * Compare producers objects
      *
      * @param obj object to compare
      * @return are two objects equal
