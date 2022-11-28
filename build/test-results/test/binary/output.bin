@@ -1,0 +1,15 @@
+qUnrecognized token 'Name': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+# at [Source: (String)"Name: Andrew
+(Address: Ukraine, Chernivtsi, Soborna 2
+šContact employee: {"name":"Misha","position":"Receiver","salary":"20000.0","address":"Holovna, 1","phoneNumber":"0504340601","medicalExamination":"true"}
+Products: [Id: 901
+Name: Table
+Category: Kitchen
+Price: 1500.0
+
+, Id: 901
+Name: Table
+Category: Kitchen
+Price: 1500.0
+]
+"; line: 1, column: 5]

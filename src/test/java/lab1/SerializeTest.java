@@ -67,45 +67,37 @@ public class SerializeTest {
 
     }
 
-//    @Test
-//    public void testXmlSerialization() {
-//        XmlSerializer xml = new XmlSerializer();
-//
-//        xml.serialize(human, "Human.xml");
-//        Human deserializedHuman = xml.deserialize(Human.class, "Human.xml");
-//        assertEquals(human, deserializedHuman);
-//
-//        xml.serialize(patient1, "Patient.xml");
-//        Patient deserializedPatient = xml.deserialize(Patient.class, "Patient.xml");
-//        assertEquals(patient1, deserializedPatient);
-//
-//        xml.serialize(doctor1, "Doctor.xml");
-//        Doctor deserializedDoctor = xml.deserialize(Doctor.class, "Doctor.xml");
-//        assertEquals(doctor1, deserializedDoctor);
-//
-//        xml.serialize(hospital, "Hospital.xml");
-//        Hospital deserializedHospital = xml.deserialize(Hospital.class, "Hospital.xml");
-//        assertEquals(hospital, deserializedHospital);
-//    }
-//
-//    @Test
-//    public void testTxtSerialization() {
-//        TxtSerializer txt = new TxtSerializer();
-//
-//        txt.serialize(human, "Human.txt");
-//        Human deserializedHuman = txt.deserialize(Human.class, "Human.txt");
-//        assertEquals(human, deserializedHuman);
-//
-//        txt.serialize(patient1, "Patient.txt");
-//        Patient deserializedPatient = txt.deserialize(Patient.class, "Patient.txt");
-//        assertEquals(patient1, deserializedPatient);
-//
-//        txt.serialize(doctor1, "Doctor.txt");
-//        Doctor deserializedDoctor = txt.deserialize(Doctor.class, "Doctor.txt");
-//        assertEquals(doctor1, deserializedDoctor);
-//
-//        txt.serialize(hospital, "Hospital.txt");
-//        Hospital deserializedHospital = txt.deserialize(Hospital.class, "Hospital.txt");
-//        assertEquals(hospital, deserializedHospital);
-//    }
+    @Test
+    public void testXmlSerialization() {
+        XmlSerializer xml = new XmlSerializer();
+
+        xml.serialize(employeeFirst, "Employee.xml");
+        Employee deserializedEmployee = xml.deserialize(Employee.class, "Employee.xml");
+        assertEquals(employeeFirst, deserializedEmployee);
+
+        xml.serialize(producerFirst, "Producer.xml");
+        Producer deserializedProducer = xml.deserialize(Producer.class, "Producer.xml");
+        assertEquals(producerFirst, deserializedProducer);
+
+        xml.serialize(productFirst, "Product.xml");
+        Product deserializedProduct = xml.deserialize(Product.class, "Product.xml");
+        assertEquals(productFirst, deserializedProduct);
+    }
+
+    @Test
+    public void testTxtSerialization() {
+        TxtSerializer txt = new TxtSerializer();
+
+        txt.serialize(employeeFirst, "Employee.txt");
+        Employee deserializedEmployee = txt.deserialize(Employee.class, "Employee.txt");
+        assertEquals(employeeFirst, deserializedEmployee);
+
+        txt.serialize(producerFirst, "Producer.txt");
+        Producer deserializedProducer = txt.deserialize(Producer.class, "Producer.txt");
+        assertEquals(producerFirst, deserializedProducer);
+
+        txt.serialize(productFirst, "Product.txt");
+        Product deserializedProduct = txt.deserialize(Product.class, "Product.txt");
+        assertEquals(productFirst, deserializedProduct);
+    }
 }

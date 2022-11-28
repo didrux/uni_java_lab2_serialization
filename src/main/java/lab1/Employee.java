@@ -40,12 +40,7 @@ public class Employee {
      */
     @Override
     public String toString() {
-        return "Name: " + name + "\n"
-                + "Position: " + position + "\n"
-                + "Salary: " + salary + "\n"
-                + "Address: " + address + "\n"
-                + "Phone number: " + phoneNumber + "\n"
-                + "Medical examination: " + medicalExamination + "\n";
+        return "{\"name\":\"" + name + "\",\"position\":\"" + position + "\",\"salary\":\"" + salary + "\",\"address\":\"" + address + "\",\"phoneNumber\":\"" + phoneNumber + "\",\"medicalExamination\":\"" + medicalExamination + "\"}";
     }
 
     /**

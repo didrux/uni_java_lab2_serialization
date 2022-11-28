@@ -1,7 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="lab1.SerializeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-28T17:52:05" hostname="DESKTOP-TVLHH8O" time="0.288">
+<testsuite name="lab1.SerializeTest" tests="3" skipped="0" failures="1" errors="0" timestamp="2022-11-28T18:05:51" hostname="DESKTOP-TVLHH8O" time="0.471">
   <properties/>
-  <testcase name="testJsonSerialization" classname="lab1.SerializeTest" time="0.288"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testJsonSerialization" classname="lab1.SerializeTest" time="0.272"/>
+  <testcase name="testTxtSerialization" classname="lab1.SerializeTest" time="0.041">
+    <failure message="java.lang.AssertionError: expected [null] but found [Name: Andrew&#10;Address: Ukraine, Chernivtsi, Soborna 2&#10;Contact employee: {&quot;name&quot;:&quot;Misha&quot;,&quot;position&quot;:&quot;Receiver&quot;,&quot;salary&quot;:&quot;20000.0&quot;,&quot;address&quot;:&quot;Holovna, 1&quot;,&quot;phoneNumber&quot;:&quot;0504340601&quot;,&quot;medicalExamination&quot;:&quot;true&quot;}&#10;Products: [Id: 901&#10;Name: Table&#10;Category: Kitchen&#10;Price: 1500.0&#10;, Id: 901&#10;Name: Table&#10;Category: Kitchen&#10;Price: 1500.0&#10;]&#10;]" type="java.lang.AssertionError">java.lang.AssertionError: expected [null] but found [Name: Andrew
+Address: Ukraine, Chernivtsi, Soborna 2
+Contact employee: {&quot;name&quot;:&quot;Misha&quot;,&quot;position&quot;:&quot;Receiver&quot;,&quot;salary&quot;:&quot;20000.0&quot;,&quot;address&quot;:&quot;Holovna, 1&quot;,&quot;phoneNumber&quot;:&quot;0504340601&quot;,&quot;medicalExamination&quot;:&quot;true&quot;}
+Products: [Id: 901
+Name: Table
+Category: Kitchen
+Price: 1500.0
+, Id: 901
+Name: Table
+Category: Kitchen
+Price: 1500.0
+]
+]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:643)
+	at lab1.SerializeTest.testTxtSerialization(SerializeTest.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="testXmlSerialization" classname="lab1.SerializeTest" time="0.151"/>
+  <system-out><![CDATA[Unrecognized token 'Name': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"Name: Andrew
+Address: Ukraine, Chernivtsi, Soborna 2
+Contact employee: {"name":"Misha","position":"Receiver","salary":"20000.0","address":"Holovna, 1","phoneNumber":"0504340601","medicalExamination":"true"}
+Products: [Id: 901
+Name: Table
+Category: Kitchen
+Price: 1500.0
+, Id: 901
+Name: Table
+Category: Kitchen
+Price: 1500.0
+]
+"; line: 1, column: 5]
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
