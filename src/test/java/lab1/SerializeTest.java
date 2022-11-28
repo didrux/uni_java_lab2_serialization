@@ -56,18 +56,15 @@ public class SerializeTest {
         json.serialize(employeeFirst, "Employee.json");
         Employee deserializedEmployee = json.deserialize(Employee.class, "Employee.json");
         assertEquals(employeeFirst, deserializedEmployee);
-//
-//        json.serialize(patient1, "Patient.json");
-//        Patient deserializedPatient = json.deserialize(Patient.class, "Patient.json");
-//        assertEquals(patient1, deserializedPatient);
-//
-//        json.serialize(doctor1, "Doctor.json");
-//        Doctor deserializedDoctor = json.deserialize(Doctor.class, "Doctor.json");
-//        assertEquals(doctor1, deserializedDoctor);
-//
-//        json.serialize(hospital, "Hospital.json");
-//        Hospital deserializedHospital = json.deserialize(Hospital.class, "Hospital.json");
-//        assertEquals(hospital, deserializedHospital);
+
+        json.serialize(producerFirst, "Producer.json");
+        Producer deserializedProducer = json.deserialize(Producer.class, "Producer.json");
+        assertEquals(producerFirst, deserializedProducer);
+
+        json.serialize(productFirst, "Product.json");
+        Product deserializedProduct = json.deserialize(Product.class, "Product.json");
+        assertEquals(productFirst, deserializedProduct);
+
     }
 
 //    @Test

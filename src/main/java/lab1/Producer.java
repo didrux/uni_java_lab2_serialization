@@ -1,9 +1,14 @@
 package lab1;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
+@JsonDeserialize(builder = Producer.ProducerBuilder.class)
 public class Producer {
     private String name;
     private String address;
@@ -15,6 +20,7 @@ public class Producer {
      *
      * @param builder
      */
+
     private Producer(ProducerBuilder builder) {
         this.name = builder.name;
         this.address = builder.address;
@@ -70,6 +76,7 @@ public class Producer {
     /**
      * Builder pattern
      */
+    @JsonPOJOBuilder(buildMethodName = "build", withPrefix = "set")
     public static class ProducerBuilder {
 
         private String name;
