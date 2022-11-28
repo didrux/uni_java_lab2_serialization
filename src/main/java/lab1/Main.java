@@ -40,9 +40,6 @@ public class Main {
         Producer producerSecond = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts)
                 .build();
 
-        Producer producerThird = new Producer.ProducerBuilder().setName("Anna").setProduct(productThird)
-                .build();
-
         /// Print information about employee class
 //        System.out.println("Employee: ");
 //        System.out.println(employeeSecond);

@@ -7,11 +7,6 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -40,14 +35,12 @@ public class SerializeTest {
     List<Product> kitchenProducts = Arrays.asList(productFirst, productSecond);
 
 
-    Producer producerFirst = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2").setContactEmployee(employeeFirst)
+    Producer producerFirst = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2")
             .build();
 
-    Producer producerSecond = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2").setContactEmployee(employeeFirst)
+    Producer producerSecond = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts).setAddress("Ukraine, Chernivtsi, Soborna 2")
             .build();
 
-    Producer producerThird = new Producer.ProducerBuilder().setName("Anna").setProduct(productThird)
-            .build();
 
     @Test
     public void testJsonSerialization() {

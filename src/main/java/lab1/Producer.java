@@ -7,86 +7,87 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 @JsonDeserialize(builder = Producer.ProducerBuilder.class)
 public class Producer {
+
     private String name;
     private String address;
-    private Employee contactEmployee;
-    private List<Product> products;
+    private final List<Product> products = new ArrayList<>();
 
-    /**
-     * Producer constructor
-     *
-     * @param builder
-     */
-
-    private Producer(ProducerBuilder builder) {
+    public Producer(ProducerBuilder builder) {
         this.name = builder.name;
         this.address = builder.address;
-        this.contactEmployee = builder.contactEmployee;
-        this.products = builder.products;
+        this.products.addAll(builder.products);
     }
 
     /**
-     * toString
+     * Set hospital address
      *
-     * @return class description in string format
+     * @param address hospital address
      */
-    @Override
-    public String toString() {
-        return "Name: " + name + "\n"
-                + "Address: " + address + "\n"
-                + "Contact employee: " + contactEmployee + "\n"
-                + "Products: " + products + "\n";
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 
     /**
-     * equals
+     * Set producer name
      *
-     * @param obj taken obj
-     * @return verdict of equality with boolean type
+     * @param name producer name
      */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        Producer producer = (Producer) obj;
-        return (producer.name.equals(this.name) &&
-                producer.address.equals(this.address) &&
-                producer.contactEmployee.equals(this.contactEmployee)
-        );
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
-     * hashCode
+     * @return hospital address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Add doctor to hospital's doctor list
      *
-     * @return hash
+     * @param doctor doctor whom need to add
      */
-    @Override
-    public int hashCode() {
-        int hash = 31;
-        hash = 9 * hash + Objects.hashCode(this.name);
-        hash = 9 * hash + Objects.hashCode(this.address);
-        hash = 9 * hash + Objects.hashCode(this.contactEmployee);
-        return hash;
+    public void addProduct(Product doctor) {
+        products.add(doctor);
     }
 
     /**
-     * Builder pattern
+     * Add products to hospital's doctor list
+     *
+     * @param products products whoms need to add
      */
+    public void addProducts(List<Product> products) {
+        this.products.addAll(products);
+    }
+
+    /**
+     * Get all products from hospital's doctor list
+     *
+     * @return list of products
+     */
+    public List<Product> getProducts() {
+        return products;
+    }
+
     @JsonPOJOBuilder(buildMethodName = "build", withPrefix = "set")
     public static class ProducerBuilder {
-
         private String name;
-
-        private String address = " ";
-        private Employee contactEmployee = new Employee.EmployeeBuilder().build();
-        private List<Product> products = new ArrayList<>();
+        private String address;
+        private final List<Product> products = new ArrayList<>();
 
         /**
-         * Builder constructor
+         * Set name of hospital
+         *
+         * @param name hospital name
+         * @return ProducerBuilder instance
          */
         public ProducerBuilder setName(String name) {
             this.name = name;
@@ -94,15 +95,10 @@ public class Producer {
         }
 
         /**
-         * Builder contact person setter
-         */
-        public ProducerBuilder setContactEmployee(Employee contactEmployee) {
-            this.contactEmployee = contactEmployee;
-            return this;
-        }
-
-        /**
-         * Builder address setter
+         * Set address of hospital
+         *
+         * @param address hospital address
+         * @return ProducerBuilder instance
          */
         public ProducerBuilder setAddress(String address) {
             this.address = address;
@@ -110,7 +106,10 @@ public class Producer {
         }
 
         /**
-         * Builder products setter
+         * Set list of hospital products
+         *
+         * @param products list of products
+         * @return ProducerBuilder instance
          */
         public ProducerBuilder setProducts(List<Product> products) {
             this.products.addAll(products);
@@ -118,76 +117,49 @@ public class Producer {
         }
 
         /**
-         * Builder product setter
-         */
-        public ProducerBuilder setProduct(Product product) {
-            this.products.add(product);
-            return this;
-        }
-
-        /**
-         * Builder build method
+         * Create new Producer object
+         *
+         * @return Producer instance
          */
         public Producer build() {
             return new Producer(this);
         }
-
     }
 
     /**
-     * name getter
+     * Generate hash code for Producer
+     *
+     * @return hash code
      */
-    public String getName() {
-        return name;
+    @Override
+    public int hashCode() {
+        return Objects.hash(address + super.hashCode());
     }
 
     /**
-     * contactEmployee getter
+     * Generate string from Producer object
+     *
+     * @return string representation of Producer
      */
-    public Employee getContactEmployee() {
-        return contactEmployee;
+    @Override
+    public String toString() {
+        return "{\"name\":\"" + name + "\",\"address\":\"" + address + "\",\"products\":" + products + "}";
     }
 
     /**
-     * address getter
+     * Compare hospitals objects
+     *
+     * @param obj object to compare
+     * @return are two objects equal
      */
-    public String getAddress() {
-        return address;
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        if (this == obj)
+            return true;
+        return Objects.equals(name, ((Producer) obj).name)
+                && Objects.equals(address, ((Producer) obj).address)
+                && Objects.equals(products, ((Producer) obj).products);
     }
-
-    /**
-     * products getter
-     */
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    /**
-     * name setter
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * address setter
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    /**
-     * contactEmployee setter
-     */
-    public void setContactEmployee(Employee contactEmployee) {
-        this.contactEmployee = contactEmployee;
-    }
-
-    /**
-     * product setter
-     */
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
 }

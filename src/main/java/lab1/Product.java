@@ -27,10 +27,7 @@ public class Product {
      */
     @Override
     public String toString() {
-        return "Id: " + id + "\n"
-                + "Name: " + name + "\n"
-                + "Category: " + category + "\n"
-                + "Price: " + price + "\n";
+        return "{\"id\":\"" + id + "\",\"name\":\"" + name + "\",\"category\":\"" + category + "\",\"price\":\"" + price + "\"}";
     }
 
     /**
@@ -56,7 +53,7 @@ public class Product {
     }
 
     /**
-     * Builder pattern
+     * ProducerBuilder pattern
      */
     @JsonPOJOBuilder(buildMethodName = "build", withPrefix = "set")
     public static class ProductBuilder {
@@ -67,7 +64,7 @@ public class Product {
         private double price = 0.0;
 
         /**
-         * Builder constructor
+         * ProducerBuilder constructor
          */
         public ProductBuilder setId(int id){
             this.id= id;
@@ -80,7 +77,7 @@ public class Product {
         }
 
         /**
-         * Builder price setter
+         * ProducerBuilder price setter
          */
         public ProductBuilder setPrice(double price) {
             this.price = price;
@@ -88,7 +85,7 @@ public class Product {
         }
 
         /**
-         * Builder category setter
+         * ProducerBuilder category setter
          */
         public ProductBuilder setCategory(String category) {
             this.category = category;
@@ -98,7 +95,7 @@ public class Product {
 
 
         /**
-         * Builder build method
+         * ProducerBuilder build method
          */
         public Product build(){
             return new Product(this);
