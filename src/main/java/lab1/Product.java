@@ -64,9 +64,14 @@ public class Product {
         /**
          * Builder constructor
          */
-        public ProductBuilder(int id, String name){
+        public ProductBuilder setId(int id){
             this.id= id;
+            return this;
+        }
+
+        public ProductBuilder setName(String name){
             this.name = name;
+            return this;
         }
 
         /**

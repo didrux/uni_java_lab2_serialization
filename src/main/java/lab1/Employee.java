@@ -86,8 +86,9 @@ public class Employee {
         /**
          * @param name
          */
-        public EmployeeBuilder(String name) {
+        public EmployeeBuilder setName(String name) {
             this.name = name;
+            return this;
         }
 
         /**

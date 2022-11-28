@@ -6,22 +6,22 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Employee employeeFirst = new Employee.EmployeeBuilder("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
+        Employee employeeFirst = new Employee.EmployeeBuilder().setName("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
                 .build();
 
-        Employee employeeSecond = new Employee.EmployeeBuilder("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
+        Employee employeeSecond = new Employee.EmployeeBuilder().setName("Misha").setPosition("Receiver").setSalary(20000).setPhoneNumber("0504340601").setMedicalExamination(true).setAddress("Holovna, 1")
                 .build();
 
-        Employee employeeThird = new Employee.EmployeeBuilder("Ivan").setPosition("Seller").setSalary(15000).setPhoneNumber("0504340602").setMedicalExamination(true).setAddress("Poshtova, 2")
+        Employee employeeThird = new Employee.EmployeeBuilder().setName("Ivan").setPosition("Seller").setSalary(15000).setPhoneNumber("0504340602").setMedicalExamination(true).setAddress("Poshtova, 2")
                 .build();
 
-        Product productFirst = new Product.ProductBuilder(901, "Table").setPrice(1500).setCategory("Kitchen")
+        Product productFirst = new Product.ProductBuilder().setId(901).setName("Table").setPrice(1500).setCategory("Kitchen")
                 .build();
 
-        Product productSecond = new Product.ProductBuilder(901, "Table").setPrice(1500).setCategory("Kitchen")
+        Product productSecond = new Product.ProductBuilder().setId(901).setName("Table").setPrice(1500).setCategory("Kitchen")
                 .build();
 
-        Product productThird = new Product.ProductBuilder(902, "Sofa").setPrice(4000).setCategory("Living room")
+        Product productThird = new Product.ProductBuilder().setId(902).setName("Sofa").setPrice(4000).setCategory("Living room")
                 .build();
 
 
@@ -34,13 +34,13 @@ public class Main {
 
 
 
-        Producer producerFirst = new Producer.ProducerBuilder("Andrew").setProducts(kitchenProducts)
+        Producer producerFirst = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts)
                 .build();
 
-        Producer producerSecond = new Producer.ProducerBuilder("Andrew").setProducts(kitchenProducts)
+        Producer producerSecond = new Producer.ProducerBuilder().setName("Andrew").setProducts(kitchenProducts)
                 .build();
 
-        Producer producerThird = new Producer.ProducerBuilder("Anna").setProduct(productThird)
+        Producer producerThird = new Producer.ProducerBuilder().setName("Anna").setProduct(productThird)
                 .build();
 
         /// Print information about employee class

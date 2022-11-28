@@ -75,14 +75,15 @@ public class Producer {
         private String name;
 
         private String address = " ";
-        private Employee contactEmployee = new Employee.EmployeeBuilder(" ").build();
+        private Employee contactEmployee = new Employee.EmployeeBuilder().build();
         private List<Product> products = new ArrayList<>();
 
         /**
          * Builder constructor
          */
-        public ProducerBuilder(String name) {
+        public ProducerBuilder setName(String name) {
             this.name = name;
+            return this;
         }
 
         /**
